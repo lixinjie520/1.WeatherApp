@@ -18,12 +18,12 @@ const weatherImages = {
 };
 
 async function checkWeather(city) {    
-    const reponse = await fetch(apiUrl + city + `&appid=${apiKey}`)
-    if(reponse.status===404){
+    const response = await fetch(apiUrl + city + `&appid=${apiKey}`)
+    if(response.status===404){
         error.style.display = 'block'
         container1.style.display = 'none'
     }else{
-        let data = await reponse.json();
+        let data = await response.json();
         temp.innerHTML = Math.round(data.main.temp)+"°C";
         cityName.innerHTML = data.name;
         humidity.innerHTML = data.main.humidity+"%";
