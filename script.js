@@ -26,7 +26,7 @@ async function checkWeather(city) {
         let data = await reponse.json();
         temp.innerHTML = Math.round(data.main.temp)+"°C";
         cityName.innerHTML = data.name;
-        humidity.innerHTML = data.main.humidity="%";
+        humidity.innerHTML = data.main.humidity+"%";
         wind.innerHTML = data.wind.speed+' km/h';
         const weather = data.weather[0]
     
